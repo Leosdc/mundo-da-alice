@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo da Alice</title>
+    <meta name="description" content="App da princesa Ana Alice para organizar livros e séries">
+    <meta name="theme-color" content="#9333ea">
+
+    <link rel="icon" href="icon.png?v=2" type="image/png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Mundo da Alice">
+    <link rel="apple-touch-icon" href="icon.png?v=2">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Evita flash de tema
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+    <style>
+        /* Estilos críticos para o Splash Screen aparecer instantaneamente */
+        #splashScreen {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Oculta scrollbar enquanto o splash está ativo */
+        html:has(#splashScreen),
+        body:has(#splashScreen) {
+            overflow: hidden !important;
+        }
+
+        .splash-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            background-image: url('splash-bg.png');
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-purple-50 to-pink-50 min-h-screen">
+    <div id="app"></div>
+
+    <div id="splashScreen">
+        <div class="absolute inset-0 bg-cover bg-center opacity-60 splash-bg"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/80"></div>
+        <div class="relative text-center px-4 animate-fade-in">
+            <img src="icon.png" alt="Mundo da Alice" class="w-32 h-32 mx-auto mb-6 drop-shadow-2xl animate-bounce">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white tracking-tight drop-shadow-2xl">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-violet-300 to-purple-400">
+                    Mundo da Alice
+                </span>
+            </h1>
+            <div class="mt-8 flex justify-center">
+                <div class="h-1 w-24 bg-gradient-to-r from-violet-400 to-purple-500 rounded-full animate-pulse"></div>
+            </div>
+            <p class="text-white/60 mt-4 text-sm uppercase tracking-widest font-medium">Carregando Magia...</p>
+        </div>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+
+</html>

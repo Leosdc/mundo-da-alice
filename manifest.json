@@ -1,0 +1,18 @@
+{
+  "name": "Mundo da Alice",
+  "short_name": "Mundo da Alice",
+  "description": "App da princesa Ana Alice",
+  "start_url": "./",
+  "display": "standalone",
+  "scope": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#9333ea",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
