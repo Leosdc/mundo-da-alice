@@ -5,3 +5,4 @@ node_modules/
 script.js.bak
 APPSCRIPT_SECURITY_UPDATE.js
 playstore_plan.md
+clean-deployments.js
