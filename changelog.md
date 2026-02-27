@@ -2,6 +2,15 @@
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
+## [6.7.0] - 2026-02-27
+### Adicionado
+- **Pretty Pop-ups ✨**: Substituição completa dos alertas e confirmações nativos do navegador por modais customizados com design *glassmorphism*, animações suaves e suporte total ao modo escuro.
+
+### Corrigido
+- **UX de Formulário**: Resolvido o problema onde o alerta de "alterações não salvas" aparecia incorretamente após um salvamento bem-sucedido.
+- **Limpeza de Console**: Removidos logs de depuração e silenciados avisos de produção do Tailwind CDN para um console mais limpo.
+- **PWA Meta Tags**: Atualizada a meta tag `apple-mobile-web-app-capable` para a versão recomendada `mobile-web-app-capable`.
+
 ## [6.6.0] - 2026-02-03
 ### Adicionado
 - **Filtros Avançados**: Novo sistema de filtragem por **País de Origem** e **Status** permitindo buscas muito mais precisas na sua biblioteca.

@@ -84,7 +84,16 @@ export const state = {
     showDatePicker: false,
     datePickerMonth: new Date().getMonth(),
     datePickerYear: new Date().getFullYear(),
-    calendarView: 'days' // 'days', 'months', 'years'
+    calendarView: 'days', // 'days', 'months', 'years'
+    confirmModal: {
+        show: false,
+        title: '',
+        message: '',
+        confirmText: 'Confirmar',
+        cancelText: 'Cancelar',
+        isDanger: false,
+        resolve: null
+    }
 };
 
 let renderer = null;

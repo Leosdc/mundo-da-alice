@@ -12,6 +12,26 @@ export function showNotification(message, type = 'success') {
     }, 3000);
 }
 
+// Modal de confirmação bonitinho
+window.confirmPretty = (message, options = {}) => {
+    return new Promise((resolve) => {
+        state.confirmModal = {
+            show: true,
+            title: options.title || 'Confirmação',
+            message: message,
+            confirmText: options.confirmText || 'Confirmar',
+            cancelText: options.cancelText || 'Cancelar',
+            isDanger: options.isDanger || false,
+            resolve: (val) => {
+                state.confirmModal.show = false;
+                render();
+                resolve(val);
+            }
+        };
+        render();
+    });
+};
+
 // Converte string para Date
 export function toValidDate(dateStr) {
     if (!dateStr) return null;

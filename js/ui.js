@@ -108,6 +108,7 @@ export function renderLogin() {
             </div>
         </div>
         ${state.showForgotPasswordModal ? renderForgotPasswordModal() : ''}
+        ${state.confirmModal?.show ? renderConfirmModal() : ''}
     `;
 }
 
@@ -642,6 +643,7 @@ export function renderApp() {
         ${renderRecapModal()}
         ${renderProfileModal()}
         ${renderChangelogModal()}
+        ${state.confirmModal?.show ? renderConfirmModal() : ''}
 `;
 
     // Restauração de rolagem, foco e cursor genérica (CIRÚRGICA)
@@ -1587,6 +1589,40 @@ export function renderChangelogModal() {
             </div>
         </div>
     </div>
+    `;
+}
+
+export function renderConfirmModal() {
+    const { title, message, confirmText, cancelText, isDanger, resolve } = state.confirmModal;
+
+    return `
+        <div class="fixed inset-0 z-[1000] flex items-center justify-center p-4 animate-fade-in">
+            <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="state.confirmModal.resolve(false)"></div>
+            <div class="relative bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 w-full max-w-sm transform animate-pop-in border border-purple-100 dark:border-gray-700">
+                <div class="text-center">
+                    <div class="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-2xl ${isDanger ? 'bg-red-50 text-red-500' : 'bg-purple-50 text-purple-500'}">
+                        <span class="text-3xl">${isDanger ? '🗑️' : '❓'}</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-gray-800 dark:text-white mb-2">${title}</h3>
+                    <p class="text-gray-500 dark:text-gray-400 font-medium mb-8">${message}</p>
+                    
+                    <div class="flex flex-col gap-3">
+                        <button
+                            onclick="state.confirmModal.resolve(true)"
+                            class="w-full py-4 rounded-2xl font-bold text-white transition-all transform active:scale-95 shadow-lg ${isDanger ? 'bg-gradient-to-r from-red-500 to-pink-500 shadow-red-200' : 'bg-gradient-to-r from-purple-500 to-indigo-500 shadow-purple-200'}"
+                        >
+                            ${confirmText || (isDanger ? 'Excluir' : 'Confirmar')}
+                        </button>
+                        <button
+                            onclick="state.confirmModal.resolve(false)"
+                            class="w-full py-4 rounded-2xl font-bold text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+                        >
+                            ${cancelText || 'Cancelar'}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
 }
 function renderCalendarPortal() {

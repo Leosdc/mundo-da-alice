@@ -3,7 +3,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white)
-![Version](https://img.shields.io/badge/Version-6.6.0-blueviolet?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-6.7.0-blueviolet?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 App que fiz para minha esposa organizar e gerenciar livros, séries e filmes! Esta versão agora roda no **Firebase**, oferecendo muito mais velocidade e recursos sociais.
@@ -65,4 +65,4 @@ Este projeto foi criado especialmente para a minha linda esposa Ana Alice! ❤�
 
 ---
 
-**Última atualização**: 03 de Fevereiro de 2026.
+**Última atualização**: 27 de Fevereiro de 2026.

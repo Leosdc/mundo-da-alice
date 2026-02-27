@@ -93,7 +93,7 @@ export async function handleSubmit() {
             showNotification('✨ Item adicionado com sucesso!');
         }
 
-        window.resetForm();
+        window.resetForm(true);
     } catch (error) {
         console.error('Erro ao salvar no Firestore:', error);
         showNotification('Erro ao salvar os dados.', 'error');
@@ -103,7 +103,12 @@ export async function handleSubmit() {
 }
 
 export async function handleDelete(id) {
-    if (confirm('Deseja realmente excluir este item?')) {
+    const confirmed = await window.confirmPretty('Deseja realmente excluir este item?', {
+        title: 'Excluir Item',
+        confirmText: 'Excluir',
+        isDanger: true
+    });
+    if (confirmed) {
         state.loading = true;
         render();
         try {

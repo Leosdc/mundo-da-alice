@@ -264,9 +264,22 @@ window.handleEdit = (id) => {
     }
 };
 
-window.resetForm = () => {
-    const hasData = state.formData.title || state.formData.author;
-    if (hasData && !confirm('Descartar alterações não salvas?')) return;
+window.resetForm = async (force = false) => {
+    const hasData = state.formData.title ||
+        state.formData.author ||
+        state.formData.pages ||
+        state.formData.rating ||
+        state.formData.country ||
+        (state.formData.date && state.formData.date !== '');
+
+    if (!force && hasData) {
+        const confirmed = await window.confirmPretty('Você tem alterações não salvas. Deseja realmente descartá-las?', {
+            title: 'Descartar alterações?',
+            confirmText: 'Descartar',
+            isDanger: true
+        });
+        if (!confirmed) return;
+    }
 
     state.formData = {
         title: '',
@@ -442,7 +455,6 @@ function registerServiceWorker() {
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('./sw.js')
-                .then(reg => console.log('SW Registrado ✨'))
                 .catch(err => console.error('SW Error:', err));
         });
     }
