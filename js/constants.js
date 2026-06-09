@@ -1,4 +1,6 @@
-const API_URL = 'https://script.google.com/macros/s/AKfycbzYO5iizLJ-i-NKetEqIHTpphjBY4zo-NV4F5DOmbJL8MGbRm2G_O95G1Wk8UUNj2sP/exec';
+const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+    ? 'http://127.0.0.1:5001/another-level-solutions/us-central1/callGemini'
+    : 'https://us-central1-another-level-solutions.cloudfunctions.net/callGemini';
 
 const bookQuotes = [
     { quote: "Só se vê bem com o coração. O essencial é invisível aos olhos.", book: "O Pequeno Príncipe" },

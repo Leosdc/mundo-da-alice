@@ -10,9 +10,11 @@ export async function callGeminiViaGAS(messages) {
 
         const response = await fetch(API_URL, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${idToken}`
+            },
             body: JSON.stringify({
-                action: 'callGemini',
-                idToken: idToken,
                 messages: messages
             })
         });
@@ -25,14 +27,14 @@ export async function callGeminiViaGAS(messages) {
         }
 
         if (!result.choices || !result.choices[0] || !result.choices[0].message) {
-            console.error('[AICall] Resposta inválida do GAS:', result);
-            return '❌ Erro: API Gemini indisponível ou resposta vazia. Verifique a chave e cota no AppScript.';
+            console.error('[AICall] Resposta inválida da Cloud Function:', result);
+            return '❌ Erro: API Gemini indisponível ou resposta vazia. Verifique as configurações das Cloud Functions.';
         }
 
         return result.choices[0].message.content;
     } catch (error) {
         console.error('Erro ao chamar Gemini:', error);
-        return 'Desculpe, tive um problema na conexão com o Google Script. Verifique se o link da API no `script.js` está correto e se você publicou uma **Nova Versão** da implantação.';
+        return 'Desculpe, tive um problema na conexão com o serviço de IA. Verifique se as Cloud Functions estão ativas e se o plano do projeto está atualizado para o plano Blaze.';
     }
 }
 
