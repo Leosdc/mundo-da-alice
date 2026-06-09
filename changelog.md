@@ -2,6 +2,15 @@
 
 Todas as mudanças notáveis neste projeto serão documentadas neste arquivo.
 
+## [6.8.0] - 2026-06-09
+### Adicionado
+- **Firebase Cloud Functions**: Estrutura de Cloud Functions em Node.js (`functions/`) e configurações de deploy do Firebase (`firebase.json`).
+- **Invalidação de Cache**: Atualização do cache do Service Worker no `sw.js` para a versão `v6.8.0`, forçando a atualização da aplicação nos dispositivos dos usuários.
+
+### Alterado
+- **Migração do Assistente (IA)**: Transição das chamadas de API do Google Apps Script para o Firebase Cloud Functions local (`callGemini`), reduzindo a latência.
+- **Upgrade do Modelo (Gemini 3.5 Flash) 🤖**: Atualização do assistente "Alice" para utilizar o modelo `gemini-3.5-flash`, trazendo respostas mais precisas e rápidas.
+
 ## [6.7.0] - 2026-02-27
 ### Adicionado
 - **Pretty Pop-ups ✨**: Substituição completa dos alertas e confirmações nativos do navegador por modais customizados com design *glassmorphism*, animações suaves e suporte total ao modo escuro.
