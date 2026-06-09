@@ -3,7 +3,7 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
 ![Google Gemini](https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white)
-![Version](https://img.shields.io/badge/Version-6.7.0-blueviolet?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-6.8.0-blueviolet?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 App que fiz para minha esposa organizar e gerenciar livros, séries e filmes! Esta versão agora roda no **Firebase**, oferecendo muito mais velocidade e recursos sociais.
@@ -36,7 +36,7 @@ App que fiz para minha esposa organizar e gerenciar livros, séries e filmes! Es
 ### 🤖 Inteligência Artificial (Google Gemini)
 - **Alice - Assistente Inteligente**: Registre conteúdos conversando naturalmente.
 - **Precisão Refinada**: A IA agora considera **Título + Autor** para trazer curiosidades e sugestões muito mais assertivas.
-- **Powered by Gemini**: Utiliza o modelo `gemini-2.0-flash` via proxy seguro no Apps Script.
+- **Powered by Gemini**: Utiliza o modelo `gemini-3.5-flash` via Firebase Cloud Functions.
 
 ## 🚀 Estrutura do Projeto
 
@@ -54,7 +54,7 @@ O projeto é modular para facilitar a manutenção:
 
 - **Frontend**: Vanilla JavaScript (ES6 Modules), HTML5, TailwindCSS.
 - **Backend & Database**: Firebase Authentication, Cloud Firestore.
-- **IA Integration**: Google Gemini API via Google Apps Script (Proxy).
+- **IA Integration**: Google Gemini API via Firebase Cloud Functions.
 - **Offline**: Service Worker (PWA).
 
 ---
@@ -65,4 +65,4 @@ Este projeto foi criado especialmente para a minha linda esposa Ana Alice! ❤�
 
 ---
 
-**Última atualização**: 27 de Fevereiro de 2026.
+**Última atualização**: 9 de Junho de 2026.
