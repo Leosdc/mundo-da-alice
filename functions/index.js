@@ -60,7 +60,7 @@ exports.callGemini = onRequest({
 
         // Inicializar o modelo Gemini
         const model = genAI.getGenerativeModel({
-            model: 'gemini-1.5-flash',
+            model: 'gemini-3.5-flash',
             systemInstruction: systemInstruction || undefined
         });
 
